@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "react-native";
 
-export default function App() {
+import { NavigationContainer} from '@react-navigation/native'
+import Routes from "./src/routes"
+
+
+
+export default function App(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar backgroundColor="green" barStyle="light-content"/>
+      <Routes/>
+
+      
+    </NavigationContainer>
   );
 }
 
+
+
+
+/*export default function App(){
+  return(
+    <View style={styles.container}>
+      <Image
+      style={styles.logo}
+      source={require("./src/assets/hyundai_logo.png")}>  
+      </Image>
+      <Text style={styles.title}> Tela de login </Text>
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    container:{
+      flex:1,
+      backgroundColor: "blue",
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 'auto'
+      
+    },
+    title:{
+      color: 'red'
+    }
+    
+    
+})*/
