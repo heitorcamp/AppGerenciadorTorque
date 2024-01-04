@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import TelaPrincipal from "../pages/TelaPrincipal/telaPrincipal";
 import LeitorQr from "../pages/LeitorQr/leitorQrcode";
 
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes(){
@@ -12,7 +13,8 @@ export default function Routes(){
         <Stack.Screen
         name="Login"
         component={Login}
-        options={{headerShown: false}}/>
+        options={{headerShown: false}}
+        />
          
           <Stack.Screen
           name="TelaPrincipal"
@@ -24,7 +26,10 @@ export default function Routes(){
          <Stack.Screen
           name="LeitorQr"
           component={LeitorQr}
-          options={{headerShown: false}}/>
+          options={{headerShown: false}}
+          />
+          
+         
       
     </Stack.Navigator>
     )
