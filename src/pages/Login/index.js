@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard} from 'react-native';
+import React, { useState } from 'react';
+import {View, Text, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard} from 'react-native';
 
 import * as Animatable from "react-native-animatable";
 import { useNavigation } from '@react-navigation/native';
@@ -7,6 +7,7 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 export default function TelaLogin() {
   const navigation = useNavigation();
+  const [hmc, setHmc] = useState("");
   return(
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -32,6 +33,9 @@ export default function TelaLogin() {
           placeholder='Digite seu HMC...'
           style={styles.input}
           keyboardType='numeric'
+          value={hmc}
+          onChange={(valor) => setHmc(valor)}
+
           ></TextInput>
 
 

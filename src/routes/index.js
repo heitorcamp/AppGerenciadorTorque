@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from '../pages/Login';
 import TelaPrincipal from "../pages/TelaPrincipal/telaPrincipal";
 import LeitorQr from "../pages/LeitorQr/leitorQrcode";
+import Facilit from "../pages/Facilit";
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +30,10 @@ export default function Routes(){
           options={{headerShown: false}}
           />
           
+          <Stack.Screen
+          name="Facilit"
+          component={Facilit}
+          options={{headerShown: false}}/>
          
       
     </Stack.Navigator>

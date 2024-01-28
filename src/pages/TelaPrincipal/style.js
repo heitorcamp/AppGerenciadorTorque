@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     flex:1,
       backgroundColor: '#6495ed',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      
   }, 
   
     button:{
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     }, 
     viewDados:{
       marginBottom:80,
-      marginTop: 50,
+      marginTop: 100,
       backgroundColor: 'lightblue',
       width: '100%',
            
@@ -56,8 +57,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 15,
-    paddingTop: 10,
+    paddingTop: 15,
     
+    },
+    viewLogin:{
+      paddingTop:50,
+      backgroundColor:'red',
+    
+      width:'100%',
+      paddingLeft:20,
+      
     }
   
 });
