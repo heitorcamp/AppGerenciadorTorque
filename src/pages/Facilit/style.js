@@ -26,6 +26,16 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       marginRight: '1%',
       marginTop:10
-}
+},
+modal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'lightgrey',
+    height: '50%',
+    marginTop:419,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    paddingTop: 12
+  },
 })
 export default styles;

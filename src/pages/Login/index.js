@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, Keyboard, Alert} from 'react-native';
 
 import * as Animatable from "react-native-animatable";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableWithoutFeedback } from 'react-native';
 
+
+
 export default function TelaLogin() {
   const navigation = useNavigation();
   const [hmc, setHmc] = useState("");
+  
+  const handleAcessar = () => {
+    // Passa o valor do HMC para a próxima tela
+    if(hmc.trim() !== ""){
+      navigation.navigate('TelaPrincipal', { hmcValue: hmc });
+    } else{
+      Alert.alert("Digite um HMC válido");
+    }
+    
+  };
+
   return(
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
@@ -34,14 +47,14 @@ export default function TelaLogin() {
           style={styles.input}
           keyboardType='numeric'
           value={hmc}
-          onChange={(valor) => setHmc(valor)}
+          onChangeText={(valor) => setHmc(valor)}
 
           ></TextInput>
 
 
           <TouchableOpacity 
           style={styles.button}
-          onPress={() => navigation.navigate('TelaPrincipal')}>
+          onPress={handleAcessar}>
             <Text style={{color: 'white', fontWeight: 'bold'}}>Acessar</Text>
           </TouchableOpacity>
 

@@ -61,11 +61,14 @@ const styles = StyleSheet.create({
     
     },
     viewLogin:{
-      paddingTop:50,
-      backgroundColor:'red',
-    
+      
+      position:'absolute',
       width:'100%',
       paddingLeft:20,
+      top:70,
+      fontWeight:'bold',
+      fontSize:15
+      
       
     }
   

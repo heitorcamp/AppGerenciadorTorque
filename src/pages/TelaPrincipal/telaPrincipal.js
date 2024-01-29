@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, Modal, FlatList} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Scanner from '../LeitorQr/leitorQrcode';
 import styles from './style';
+import { useRoute } from "@react-navigation/native";
 import Facilit from '../Facilit';
 import TelaLogin from '../Login';
 
@@ -14,6 +15,8 @@ export default function TelasPrincipal() {
   const [data, setData] = React.useState("");
   const [qrLidos, setQrLidos] = useState([]);
 
+  const route = useRoute();
+  const {hmcValue} = route.params;
   
   
   const qrScaneado = (type, data) => {
@@ -34,10 +37,12 @@ export default function TelasPrincipal() {
       </TouchableOpacity>
     </View>
   );
+
+ 
   return(
       <View style={styles.container}>
-        
-        
+
+        <Text style={styles.viewLogin}>HMC Logado: {hmcValue}</Text>
             <Modal
             visible={modalVisible}
             transparent={true}
@@ -56,7 +61,7 @@ export default function TelasPrincipal() {
               renderItem={renderListItem}
               keyExtractor={(item) => item.id}
             />   
-                    
+                   
             
         <TouchableOpacity style={styles.button}
         onPress={() => setModalVisible(true)}>
